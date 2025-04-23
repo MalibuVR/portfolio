@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mein Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href="#about">Über mich</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projekte</a></li>
+          <li><a href="#social">Social</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </nav>
+
+    <header class="fade-in-section">
+      <h1>Hi, ich bin Lukas</h1>
+        <p>Willkommen auf meiner Portfolio-Seite!</p>
+        <img src="lukas.jpg" alt="Lukas Passer" class="profile-pic">
+    </header>
+
+  <section id="about" class="fade-in-section">
+    <h2>Über mich</h2>
+    <p>
+      Hey, ich bin Lukas Passer – 23 Jahre jung, technikverliebt und mit Herzblut in der Welt des Fernsehens zuhause.
+      Seit fast vier Jahren arbeite ich als EVSler in der Live-Produktion und weiß, was es heißt, wenn Sekunden zählen
+      und alles auf den Punkt funktionieren muss.
+    </p>
+    <p>
+      Ob schnelle Wiederholungen im Live-Sport, kreative Schnitte oder zuverlässige Unterstützung in der Regie – ich
+      liebe es, wenn Technik und Timing Hand in Hand gehen. Ich bin kein Typ für Routine, sondern für Lösungen, die
+      funktionieren – auch wenn’s mal hektisch wird.
+    </p>
+    <p>
+      Neben der Arbeit entdecke ich gerade die Welt des digitalen Gestaltens: eigene Projekte, Webseiten, Content.
+      Genau diese Mischung aus klassischer Broadcast-Technik und moderner Kreativität treibt mich an.
+    </p>
+  </section>
+
+  <div class="section-divider fade-in-divider"></div>
+
+  <section id="skills" class="fade-in-section">
+    <h2>Skills</h2>
+    <ul>
+      <li>EVS Bedienung</li>
+      <li>Grafik-Operator</li>
+      <li>Technisches Verständnis für TV-Produktionen</li>
+      <li>Videoschnitt & Content-Erstellung</li>
+      <li>Teamarbeit & schnelle Reaktion in Live-Situationen</li>
+    </ul>
+  </section>
+
+  <div class="section-divider fade-in-divider"></div>
+
+  <section id="projects" class="fade-in-section">
+    <h2>Projekte</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>FameFighting 2024 in Bonn Highlight-Montage</h3>
+        <p>Ein Zusammenschnitt spannender Momente, den ich als EVS-Operator live erstellt habe.</p>
+        <video controls class="project-video">
+          <source src="famefight.mp4" type="video/mp4">
+          Dein Browser unterstützt dieses Videoformat nicht.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider fade-in-divider"></div>
+
+  <section id="references" class="fade-in-section">
+    <h2>Referenzen</h2>
+    <p>Hier ein Auszug der Unternehmen und Produktionen, mit denen ich bereits zusammenarbeiten durfte:</p>
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <a href="https://www.magentasport.de" target="_blank">
+          <img src="images/logos/magenta.png" alt="MagentaSport">
+        </a>
+        <a href="https://www.rt1.tv" target="_blank">
+          <img src="images/logos/rt1.png" alt="rt1.tv">
+        </a>
+        <a href="https://www.tv-skyline.de" target="_blank">
+          <img src="images/logos/tvskyline.png" alt="TV Skyline">
+        </a>
+        <a href="https://www.nepgroup.com/de" target="_blank">
+          <img src="images/logos/nep.jpg" alt="NEP Germany">
+        </a>
+        <a href="https://www.tvn.de" target="_blank">
+          <img src="images/logos/tvn.png" alt="TVN">
+        </a>
+        <a href="https://www.redbullmediahouse.com" target="_blank">
+          <img src="images/logos/redbull.png" alt="Red Bull">
+        </a>
+        <a href="https://argusproductions.tv" target="_blank">
+          <img src="images/logos/argus.png" alt="Argus Productions">
+        </a>
+        <a href="https://www.zdf.de" target="_blank">
+          <img src="images/logos/zdf.jpeg" alt="ZDF">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider fade-in-divider"></div>
+
+  <section id="social" class="fade-in-section">
+    <h2>Finde mich online</h2>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/deinprofil" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://www.instagram.com/_mrlukas_" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://www.tiktok.com/@mrlukas" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Kontakt</h2>
+    <p>Du kannst mich erreichen unter: <a href="mailto:lukas.passer@icloud.com">lukas.passer@icloud.com</a></p>
+  </section>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in-section, .fade-in-divider');
+  
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+  
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+  
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+
+<footer>
+  <p>&copy; 2025 Lukas Passer · Alle Rechte vorbehalten</p>
+</footer>
+
+</body>
+</html>
