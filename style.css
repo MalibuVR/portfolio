@@ -594,6 +594,16 @@ body.light #impressum a {
   to { opacity: 0; visibility: hidden; }
 }
 
+@media (max-width: 600px) {
+  .intro-text h1 {
+    font-size: 2rem;
+  }
+
+  .intro-text p {
+    font-size: 1rem;
+  }
+}
+
 /* === RESPONSIVE FIX FÜR TOGGLE & NAVIGATION (kleine Bildschirme) === */
 @media (max-width: 768px) {
   .theme-toggle {
