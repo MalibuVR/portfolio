@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background-color: #0e1117;
@@ -273,4 +277,312 @@ footer {
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+
+/* === DARK/LIGHT MODE SWITCH === */
+.theme-toggle {
+  position: fixed;
+  top: 0.5rem;
+  right: 1rem;
+  z-index: 9999;
+  background: rgba(255,255,255,0.05); /* temporär sichtbar */
+  padding: 0.5rem;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+}
+
+/* === DARK/LIGHT MODE TOGGLE === */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-radius: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+  backdrop-filter: blur(6px);
+  transition: background-color 0.3s ease;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.slider .icon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Aktiviert */
+input:checked + .slider {
+  background-color: rgba(77, 184, 255, 0.2);
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* Light Mode */
+body.light .slider {
+  background-color: rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.15), 0 0 4px rgba(0, 0, 0, 0.1); /* das ist die Umrandung! */
+  color: #000;
+  backdrop-filter: blur(6px);
+}
+
+body.light .slider:before {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+/* LIGHT MODE STYLE OVERRIDES */
+body.light {
+  background-color: #f5f5f5;
+  color: #111;
+}
+
+body.light nav {
+  background-color: #eaeaea;
+}
+
+body.light section {
+  background-color: #fff;
+  color: #111;
+}
+
+body.light .project-card,
+body.light .reference-grid span,
+body.light .social-links a {
+  background-color: #f0f0f0;
+  color: #111;
+}
+
+body.light footer {
+  background-color: #eaeaea;
+  color: #444;
+}
+
+/* Navigation Links heller */
+body.light nav a {
+  color: #111;
+}
+
+body.light nav a:hover {
+  color: #4db8ff;
+}
+
+body.light header {
+  background: #f7f7f7 !important;
+  color: #111 !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+body.light header h1,
+body.light header p {
+  color: #111 !important;
+}
+
+/* Footer Hintergrund heller */
+body.light footer {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+body.light .profile-pic {
+  border: 4px solid #ccc;
+}
+
+/* === KONTAKTFORMULAR === */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #1c1f26;
+  color: #fff;
+}
+
+body.light .contact-form input,
+body.light .contact-form textarea {
+  background-color: #fff;
+  color: #111;
+  border: 1px solid #bbb;
+}
+
+.contact-form button {
+  padding: 0.8rem 1.2rem;
+  background-color: #4db8ff;
+  color: #0e1117;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #339ddf;
+}
+
+/* === BACK TO TOP BUTTON – ANIMIERT === */
+#back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #4db8ff;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 0.9rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.4s ease, background-color 0.3s ease;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#back-to-top:hover {
+  background-color: #339ddf;
+  box-shadow: 0 0 12px #4db8ff;
+  transform: translateY(-3px);
+}
+
+body.light #back-to-top {
+  background-color: #333;
+  color: #fff;
+}
+
+/* === DATENSCHUTZ & IMPRESSUM IM STIL DER SECTIONS === */
+#privacy, #impressum {
+  padding: 3rem 1rem;
+  max-width: 960px;
+  margin: auto;
+  text-align: left;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+#privacy h2,
+#impressum h2 {
+  font-size: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #4db8ff;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+#privacy p,
+#impressum p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Light Mode */
+body.light #privacy,
+body.light #impressum {
+  background-color: #fff;
+  color: #111;
+}
+
+body.light #privacy h2,
+body.light #impressum h2 {
+  color: #111;
+}
+
+body.light #privacy a,
+body.light #impressum a {
+  color: #4db8ff;
+  text-decoration: underline;
+}
+
+/* === STARTSCREEN INTRO === */
+#intro {
+  position: fixed;
+  inset: 0;
+  background-color: #0e1117;
+  color: #4db8ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 9999;
+  animation: fadeOut 1s ease 2.5s forwards;
+}
+
+.intro-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  animation: popIn 1s ease-out forwards;
+}
+
+.intro-text p {
+  font-size: 1.2rem;
+  opacity: 0;
+  animation: fadeIn 1.5s ease 1s forwards;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
 }
