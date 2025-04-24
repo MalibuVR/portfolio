@@ -555,13 +555,15 @@ body.light #impressum a {
 /* === STARTSCREEN INTRO === */
 #intro {
   position: fixed;
-  inset: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background-color: #0e1117;
   color: #4db8ff;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  text-align: center; /* wichtig für mobile */
+  padding: 2rem; /* falls Text umbricht */
   z-index: 9999;
   animation: fadeOut 1s ease 2.5s forwards;
 }
