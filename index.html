@@ -253,6 +253,30 @@ setTimeout(() => {
   const intro = document.getElementById('intro');
   if (intro) intro.style.display = 'none';
 }, 3000);
+
+    const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll("nav ul li a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 150;
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
+      current = "impressum";
+}
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${current}`) {
+      link.classList.add("active");
+    }
+  });
+});
   </script>
 
 <button id="back-to-top" title="Nach oben"><i class="fas fa-chevron-up"></i></button>
