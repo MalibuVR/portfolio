@@ -159,16 +159,7 @@
 
   <section id="projects" class="fade-in-section">
     <h2>Projekte</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <h3>FameFighting 2024 in Bonn Highlight-Montage</h3>
-        <p>Ein kurzer Zusammenschnitt spannender Momente, den ich als EVS-Operator live erstellt habe.</p>
-        <video controls class="project-video">
-          <source src="famefight.mp4" type="video/mp4">
-          Dein Browser unterstützt dieses Videoformat nicht.
-        </video>
-      </div>
-    </div>
+    <div class="project-grid"></div>
   </section>
 
   <div class="section-divider fade-in-divider"></div>
@@ -321,6 +312,39 @@ window.addEventListener("scroll", () => {
       link.classList.add("active");
     }
   });
+});
+
+    const projects = [
+  {
+    title: "FameFighting 2024",
+    description: "Highlight-Montage aus Bonn.",
+    media: "famefight.mp4",
+    type: "video"
+  },
+  {
+    title: "Red Bull Event",
+    description: "Schnappschuss vom Aufbau hinter den Kulissen.",
+    media: "redbull-event.jpg",
+    type: "image"
+  }
+];
+
+const projectGrid = document.querySelector('.project-grid');
+
+projects.forEach(project => {
+  const card = document.createElement('div');
+  card.classList.add('project-card');
+
+  card.innerHTML = `
+    <h3>${project.title}</h3>
+    <p>${project.description}</p>
+    ${project.type === 'video'
+      ? `<video controls class="project-video"><source src="${project.media}" type="video/mp4">Dein Browser unterstützt dieses Video nicht.</video>`
+      : `<img src="${project.media}" alt="${project.title}" class="project-image">`
+    }
+  `;
+
+  projectGrid.appendChild(card);
 });
   </script>
 
