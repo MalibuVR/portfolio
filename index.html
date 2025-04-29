@@ -43,11 +43,11 @@
 
     <header class="fade-in-section">
       <h1>Hi, ich bin Lukas</h1>
-        <p>Ich bringe Technik und Kreativität zusammen &ndash; willkommen auf meiner Seite!</p>
+      <p>Ich bringe Technik und Kreativität zusammen &ndash; willkommen auf meiner Seite!</p>
         <img src="lukas.JPG" alt="Lukas Passer" class="profile-pic">
     </header>
 
-  <section id="about" class="fade-in-section">
+  <section id="about" class="fade-in-left">
     <h2>Über mich</h2>
     <p>
       Hey, ich bin Lukas Passer – 23 Jahre jung, technikverliebt und mit Herzblut in der Welt des Fernsehens zuhause.
@@ -67,7 +67,7 @@
 
   <div class="section-divider fade-in-divider"></div>
 
-  <section id="skills" class="fade-in-section">
+  <section id="skills" class="fade-in-right">
     <h2>Skills</h2>
     <ul>
       <li>EVS Bedienung</li>
@@ -116,7 +116,7 @@
 
   <div class="section-divider fade-in-divider"></div>
 
-  <section id="services" class="fade-in-section">
+  <section id="services" class="fade-in-right">
     <h2>Mein Angebot</h2>
     <p>Du suchst jemanden, der Technik liebt, kreativ denkt und zuverlässig abliefert? Genau das findest du hier!</p>
   
@@ -133,7 +133,7 @@
 
   <div class="section-divider fade-in-divider"></div>
 
-  <section id="pricing" class="fade-in-section">
+  <section id="pricing" class="fade-in-left">
     <h2>Preise</h2>
     <p>Gute Qualität muss nicht kompliziert sein. Hier bekommst du moderne Weblösungen zu fairen Konditionen:</p>
   
@@ -149,7 +149,7 @@
 
   <div class="section-divider fade-in-divider"></div>
 
-  <section id="inquiry" class="fade-in-section">
+  <section id="inquiry" class="fade-in-right">
     <h2>Projekt anfragen</h2>
     <p>Du hast eine Idee oder brauchst Unterstützung bei deinem Webauftritt? Lass uns drüber sprechen!</p>
     <a href="#contact" class="btn-inquiry">Jetzt anfragen</a>
@@ -157,14 +157,14 @@
 
   <div class="section-divider fade-in-divider"></div>
 
-  <section id="projects" class="fade-in-section">
+  <section id="projects" class="fade-in-left">
     <h2>Projekte</h2>
     <div class="project-grid"></div>
   </section>
 
   <div class="section-divider fade-in-divider"></div>
 
-  <section id="faq" class="fade-in-section">
+  <section id="faq" class="fade-in-right">
     <h2>Häufige Fragen</h2>
     <div class="faq-item">
       <h3>Wie läuft die Zusammenarbeit ab?</h3>
@@ -184,7 +184,7 @@
 
   <div class="section-divider fade-in-divider"></div>
 
-  <section id="social" class="fade-in-section">
+  <section id="social" class="fade-in-left">
     <h2>Finde mich online</h2>
     <div class="social-links">
       <a href="https://de.linkedin.com/in/lukas-passer-0a8543246" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
@@ -242,7 +242,7 @@
   </section>
 
   <script>
-    const faders = document.querySelectorAll('.fade-in-section, .fade-in-divider');
+    const faders = document.querySelectorAll('.fade-in-section, .fade-in-divider, .fade-in-left, .fade-in-right');
   
     const appearOptions = {
       threshold: 0.1,
@@ -314,7 +314,7 @@ window.addEventListener("scroll", () => {
   });
 });
 
-    const projects = [
+const projects = [
   {
     title: "FameFighting 2024",
     description: "Highlight-Montage aus Bonn.",
