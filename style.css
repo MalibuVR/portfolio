@@ -1,5 +1,4 @@
-
-/* === BASISSTIL === */
+/* === Basisstil === */
 * {
   margin: 0;
   padding: 0;
@@ -26,7 +25,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* === NAVIGATION === */
+/* === Navigation === */
 nav {
   background-color: #1c1f26;
   padding: 1rem 0;
@@ -49,7 +48,6 @@ nav ul li {
   margin: 0;
 }
 
-
 nav ul li a {
   color: #e0e0e0;
   font-weight: 600;
@@ -64,7 +62,7 @@ nav ul li a.active {
   border-bottom: 2px solid #4db8ff;
 }
 
-/* === HEADER === */
+/* === Header === */
 header {
   text-align: center;
   padding: 3rem 1rem;
@@ -90,7 +88,7 @@ header p {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* === SECTIONS === */
+/* === Abschnitte === */
 section {
   padding: 3rem 1rem;
   max-width: 960px;
@@ -112,7 +110,7 @@ section h2 {
   margin-bottom: 2rem;
 }
 
-/* === SKILLS + LISTEN === */
+/* === Listen und Aufzählungen === */
 ul {
   list-style-type: disc;
   padding-left: 2rem;
@@ -123,7 +121,49 @@ ul {
   margin-bottom: 0.8rem;
 }
 
-/* === PROJEKTE === */
+.offer-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.offer-list li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.offer-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #4db8ff;
+  font-weight: bold;
+}
+
+.pricing-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.pricing-list li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.pricing-list li::before {
+  content: "€";
+  position: absolute;
+  left: 0;
+  color: #4db8ff;
+  font-weight: bold;
+}
+
+/* === Projekte === */
 .project-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -150,7 +190,7 @@ ul {
   margin-top: 1rem;
 }
 
-/* === SOCIAL LINKS === */
+/* === Soziale Links === */
 .social-links {
   margin-top: 1.5rem;
   display: flex;
@@ -180,117 +220,7 @@ ul {
   box-shadow: 0 0 10px rgba(77, 184, 255, 0.4);
 }
 
-/* === FOOTER === */
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  background-color: #1c1f26;
-  color: #888;
-  font-size: 0.9rem;
-}
-
-/* === FADE-IN ANIMATION === */
-.fade-in-section {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-in-section.is-visible {
-  opacity: 1;
-  transform: none;
-}
-
-/* === RESPONSIVE === */
-@media (min-width: 700px) {
-  .project-grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    justify-content: center;
-  }
-
-  nav ul {
-    gap: 3rem;
-  }
-
-  header h1 {
-    font-size: 3rem;
-  }
-}
-
-.section-divider {
-  height: 1px;
-  background: linear-gradient(to right, transparent, #4db8ff, transparent);
-  margin: 3rem auto;
-  width: 60%;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  box-shadow: 0 0 6px rgba(77, 184, 255, 0.15);
-}
-
-.section-divider.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-  box-shadow: 0 0 12px rgba(77, 184, 255, 0.25);
-}
-
-.reference-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.reference-grid span {
-  display: inline-block;
-  background-color: #1c1f26;
-  padding: 0.8rem 1rem;
-  border-radius: 8px;
-  font-weight: 600;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  transition: transform 0.2s;
-}
-
-.reference-grid span:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 12px rgba(77, 184, 255, 0.4);
-}
-
-/* === LOGO-KARUSSELL === */
-.carousel-container {
-  overflow: hidden;
-  margin-top: 2rem;
-}
-
-.carousel-track {
-  display: flex;
-  gap: 2rem;
-  animation: scroll 30s linear infinite;
-  width: max-content;
-}
-
-.carousel-track:hover {
-  animation-play-state: paused;
-}
-
-.carousel-track a img {
-  height: 60px;
-  filter: grayscale(100%);
-  transition: transform 0.3s, filter 0.3s;
-}
-
-.carousel-track a:hover img {
-  filter: grayscale(0%);
-  transform: scale(1.1);
-}
-
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* === KONTAKTFORMULAR === */
+/* === Kontaktformular === */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -332,7 +262,23 @@ body.light .contact-form textarea {
   background-color: #339ddf;
 }
 
-/* === BACK TO TOP BUTTON – ANIMIERT === */
+/* === FAQ === */
+.faq-item {
+  margin-bottom: 2rem;
+}
+
+.faq-item h3 {
+  font-size: 1.2rem;
+  color: #4db8ff;
+  margin-bottom: 0.5rem;
+}
+
+.faq-item p {
+  font-size: 1rem;
+  color: inherit;
+}
+
+/* === Zurück nach oben Button (animiert) === */
 #back-to-top {
   position: fixed;
   bottom: 2rem;
@@ -369,7 +315,7 @@ body.light #back-to-top {
   color: #fff;
 }
 
-/* === DATENSCHUTZ & IMPRESSUM IM STIL DER SECTIONS === */
+/* === Datenschutz & Impressum im Stil der Abschnitte === */
 #privacy, #impressum {
   padding: 3rem 1rem;
   max-width: 960px;
@@ -394,7 +340,6 @@ body.light #back-to-top {
   margin-bottom: 1rem;
 }
 
-/* Light Mode */
 body.light #privacy,
 body.light #impressum {
   background-color: #fff;
@@ -412,7 +357,7 @@ body.light #impressum a {
   text-decoration: underline;
 }
 
-/* === STARTSCREEN INTRO === */
+/* === Startscreen Intro === */
 #intro {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -464,7 +409,7 @@ body.light #impressum a {
   }
 }
 
-/* === RESPONSIVE FIX FÜR TOGGLE & NAVIGATION (kleine Bildschirme) === */
+/* === Responsive Fix für Toggle & Navigation (kleine Bildschirme) === */
 @media (max-width: 768px) {
   nav ul {
     flex-wrap: wrap;
@@ -472,81 +417,7 @@ body.light #impressum a {
   }
 }
 
-.offer-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 2rem;
-}
-
-.offer-list li {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.offer-list li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: #4db8ff;
-  font-weight: bold;
-}
-
-.pricing-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 2rem;
-}
-
-.pricing-list li {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.pricing-list li::before {
-  content: "€";
-  position: absolute;
-  left: 0;
-  color: #4db8ff;
-  font-weight: bold;
-}
-
-.btn-inquiry {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 0.8rem 1.5rem;
-  background-color: #4db8ff;
-  color: #0e1117;
-  font-weight: bold;
-  font-size: 1.1rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.btn-inquiry:hover {
-  background-color: #339ddf;
-}
-
-.faq-item {
-  margin-bottom: 2rem;
-}
-
-.faq-item h3 {
-  font-size: 1.2rem;
-  color: #4db8ff;
-  margin-bottom: 0.5rem;
-}
-
-.faq-item p {
-  font-size: 1rem;
-  color: inherit;
-}
-
-/* === Fade-In-Animation links/rechts === */
+/* === Fade-In Animation links/rechts === */
 .fade-in-left {
   opacity: 0;
   transform: translateX(-50px);
@@ -567,4 +438,95 @@ body.light #impressum a {
 .is-visible.fade-in-right {
   opacity: 1;
   transform: translateX(0);
+}
+
+/* === Section Divider === */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #4db8ff, transparent);
+  margin: 3rem auto;
+  width: 60%;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  box-shadow: 0 0 6px rgba(77, 184, 255, 0.15);
+}
+
+.section-divider.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  box-shadow: 0 0 12px rgba(77, 184, 255, 0.25);
+}
+
+/* === Referenz-Grid === */
+.reference-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.reference-grid span {
+  display: inline-block;
+  background-color: #1c1f26;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.reference-grid span:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(77, 184, 255, 0.4);
+}
+
+/* === Logo-Karussell === */
+.carousel-container {
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  animation: scroll 30s linear infinite;
+  width: max-content;
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+.carousel-track a img {
+  height: 60px;
+  filter: grayscale(100%);
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.carousel-track a:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* === Responsive === */
+@media (min-width: 700px) {
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    justify-content: center;
+  }
+
+  nav ul {
+    gap: 3rem;
+  }
+
+  header h1 {
+    font-size: 3rem;
+  }
 }
