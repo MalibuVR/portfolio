@@ -530,3 +530,11 @@ body.light #impressum a {
     font-size: 3rem;
   }
 }
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  background-color: #1c1f26; /* oder deine bevorzugte Footerfarbe */
+  color: #e0e0e0;
+}
