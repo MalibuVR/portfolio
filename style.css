@@ -548,3 +548,18 @@ footer {
   background-color: #1c1f26; /* oder deine bevorzugte Footerfarbe */
   color: #e0e0e0;
 }
+
+.lang-switch {
+  font-weight: bold;
+  background: #4db8ff;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  margin-left: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.lang-switch:hover {
+  background: #007acc;
+  color: #fff;
+}
