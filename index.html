@@ -36,7 +36,6 @@
       <li><a href="#references">Referenzen &amp; Kunden</a></li>
       <li><a href="#services">Angebot</a></li>
       <li><a href="#pricing">Preise</a></li>
-      <li><a href="#projects">Projekte</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#social">Social</a></li>
       <li><a href="#contact">Kontakt</a></li>
@@ -176,14 +175,6 @@
     <h2>Projekt anfragen</h2>
     <p>Du hast eine Idee oder brauchst Unterstützung bei deinem Webauftritt? Lass uns drüber sprechen!</p>
     <a href="#contact" class="btn-inquiry">Jetzt anfragen</a>
-  </section>
-
-  <div class="section-divider fade-in-divider"></div>
-
-  <!-- Projekte -->
-  <section id="projects" class="fade-in-left">
-    <h2>Projekte</h2>
-    <div class="project-grid"></div>
   </section>
 
   <div class="section-divider fade-in-divider"></div>
@@ -357,34 +348,6 @@
           link.classList.add("active");
         }
       });
-    });
-
-    // Projekte automatisch einfügen
-    const projects = [
-      {
-        title: "FameFighting 2024",
-        description: "Highlight-Montage aus Bonn.",
-        media: "famefight.mp4",
-        type: "video"
-      }
-    ];
-
-    const projectGrid = document.querySelector('.project-grid');
-
-    projects.forEach(project => {
-      const card = document.createElement('div');
-      card.classList.add('project-card');
-
-      card.innerHTML = `
-        <h3>${project.title}</h3>
-        <p>${project.description}</p>
-        ${project.type === 'video'
-          ? `<video controls class="project-video"><source src="${project.media}" type="video/mp4">Dein Browser unterstützt dieses Video nicht.</video>`
-          : `<img src="${project.media}" alt="${project.title}" class="project-image" />`
-        }
-      `;
-
-      projectGrid.appendChild(card);
     });
   </script>
 
