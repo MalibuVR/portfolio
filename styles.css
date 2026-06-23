@@ -133,14 +133,16 @@ main,
   text-transform: uppercase;
 }
 
-.intro-content h1 {
+.intro-title {
+  margin: 0;
   max-width: none;
   font-size: clamp(2.8rem, 9vw, 7.2rem);
+  font-weight: 850;
   line-height: 0.92;
   animation: introPop 700ms ease both;
 }
 
-.intro-content p:not(.intro-kicker) {
+.intro-content p:not(.intro-kicker):not(.intro-title) {
   max-width: 520px;
   color: var(--muted);
   font-size: clamp(1rem, 2vw, 1.25rem);
