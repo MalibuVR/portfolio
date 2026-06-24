@@ -554,6 +554,12 @@ h3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.production-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
 .logo-grid {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -579,7 +585,8 @@ h3 {
 }
 
 .service-card,
-.reference-card {
+.reference-card,
+.production-card {
   min-height: 250px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -596,7 +603,8 @@ h3 {
 
 .card-index,
 .reference-type,
-.timeline-date {
+.timeline-date,
+.production-meta {
   color: var(--accent-warm);
   font-size: 0.78rem;
   font-weight: 850;
@@ -605,13 +613,15 @@ h3 {
 
 .service-card p,
 .reference-card p,
+.production-card p,
 .timeline-item p,
 .contact-section p {
   color: var(--muted);
 }
 
 .service-card h3,
-.reference-card h3 {
+.reference-card h3,
+.production-card h3 {
   margin: 22px 0 12px;
 }
 
@@ -636,6 +646,24 @@ h3 {
 
 .timeline-item h3 {
   margin-bottom: 8px;
+}
+
+.production-block {
+  grid-column: 1 / -1;
+  margin-top: 8px;
+}
+
+.compact-heading {
+  max-width: 820px;
+  margin-bottom: 26px;
+}
+
+.production-card {
+  min-height: 220px;
+}
+
+.production-meta {
+  margin-bottom: 16px;
 }
 
 .contact-section {
@@ -833,6 +861,10 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .production-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .reference-grid,
   .about-grid,
   .about-layout {
@@ -958,7 +990,8 @@ h3 {
   }
 
   .service-grid,
-  .reference-grid {
+  .reference-grid,
+  .production-grid {
     grid-template-columns: 1fr;
   }
 
@@ -967,7 +1000,8 @@ h3 {
   }
 
   .service-card,
-  .reference-card {
+  .reference-card,
+  .production-card {
     min-height: auto;
   }
 
