@@ -29,6 +29,7 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 body::before,
@@ -41,7 +42,7 @@ body::after {
 
 body::before {
   z-index: -2;
-  background: url("evspic.jpeg") center / cover no-repeat;
+  background: url("evspic-bg.webp") center / cover no-repeat;
   opacity: 0.28;
 }
 
@@ -101,7 +102,7 @@ main,
   padding: 24px;
   background:
     linear-gradient(180deg, rgba(7, 8, 7, 0.76), rgba(7, 8, 7, 0.92)),
-    url("evspic.jpeg") center / cover no-repeat;
+    url("evspic-bg.webp") center / cover no-repeat;
   color: var(--text);
   text-align: center;
   animation: introExit 900ms ease 2500ms forwards;
@@ -303,6 +304,7 @@ h2 {
   font-size: clamp(2rem, 5vw, 4.2rem);
   line-height: 1;
   font-weight: 820;
+  text-wrap: balance;
 }
 
 h3 {
@@ -333,6 +335,7 @@ h3 {
   padding: 13px 18px;
   font-weight: 800;
   line-height: 1.15;
+  text-align: center;
   transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
@@ -907,6 +910,10 @@ h3 {
   .hero-actions,
   .button {
     width: 100%;
+  }
+
+  .hero-actions {
+    align-items: stretch;
   }
 
   .broadcast-visual {
